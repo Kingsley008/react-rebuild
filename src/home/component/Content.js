@@ -4,7 +4,7 @@ import ManClothes from './ManClothes';
 import LadyClothes from './LadyClothes';
 import NewProduct from './NewProduct';
 import Comment from './Comment';
-import Side from "./Side";
+import Side from "../../side/Side";
 
 class Content extends React.Component{
     constructor(){

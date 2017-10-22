@@ -7,7 +7,7 @@ class Category extends React.Component{
 
     render(){
         return(
-            <div className="catalog">
+            <div className="catalog m-dn">
             <ul>
             <li className="nav-main"><p><a href="/biyaoweb/category?category=男装">男装</a> <span>/</span><a href="">定制</a></p>
             <ul className="nav-sub-p">

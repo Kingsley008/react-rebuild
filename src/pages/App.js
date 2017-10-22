@@ -1,5 +1,5 @@
 import React from 'react';
-import {nav as TopMenu} from '../topMenu/';
+import  TopMenu from '../topMenu/';
 
 const App = ({children}) => (
     <div>

@@ -3,6 +3,7 @@ import {Router, Route, browserHistory, IndexRoute} from 'react-router';
 import {App, Home, Login, Register, Settlement, ShoppingCart,Purchased } from './pages/index';
 import {syncHistoryWithStore} from 'react-router-redux';
 import  store from './Store';
+import './mobile.css';
 
 // 同步store的路由状态
 const history = syncHistoryWithStore(browserHistory, store);

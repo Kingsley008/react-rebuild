@@ -38,7 +38,9 @@ class ManClothes extends React.Component{
         const showManNode = document.querySelector('.m-show.f-center');
         let winH = document.documentElement.clientHeight;
         let winS = document.documentElement.scrollTop;
-
+        if(!showManNode){
+            return
+        }
         if( winH + winS > showManNode.offsetTop + showManNode.clientHeight/2){
             this.props.fetchManInfo();
             this.isFetch = true;

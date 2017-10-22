@@ -9,7 +9,7 @@ class Side extends React.Component{
         };
         this.onScrollBack = this.onScrollBack.bind(this);
     }
-
+    /*回到顶部动画效果*/
     onScrollBack(){
         this.intervalHandler = setInterval(()=>{
            let winS = document.documentElement.scrollTop;

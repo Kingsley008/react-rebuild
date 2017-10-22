@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router';
+import {connect} from 'react-redux';
 import '../css/common.css';
 /**
  * 顶栏导航组件
  * 使用Link 指定路由
  * **/
 
-const nav = () => (
-    <div id="top" className="t-header">
+const Nav = ({user}) => (
+    <div id="top" className="t-header m-dn">
         <div className="t-header-center f-tac">
             <ul className="header-nav">
                 <li className="header-nav-item"><Link to = "/home">首页</Link><b className="hr-v"></b></li>
@@ -40,11 +41,17 @@ const nav = () => (
                         </dl>
                     </div>
                 </li>
-                <li className="header-user-item user-message"><a href="">游客，你好<span className="message-num"></span></a></li>
+                <li className="header-user-item user-message"><a href="">{user.trueName?user.trueName:'游客，你好'}<span className="message-num"></span></a></li>
             <li className="header-user-item user-shopCar"><Link to="shoppingCart">购物车<span className="shopCar-num"></span></Link></li>
         </ul>
     </div>
 </div>
 );
 
-export {nav};
+const mapState = (state)=>{
+
+    return {
+        user: state.loginReducer.user
+    }
+};
+export default connect(mapState)(Nav)

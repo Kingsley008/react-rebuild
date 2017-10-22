@@ -2,7 +2,7 @@ import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import promiseMiddleware from './middleWare/promiseMiddleware';
 import {sliderReducer,manReducer,ladyReducer, commentReducer} from './home/reducer';
-
+import {loginReducer} from "./login/reducer"
 
 /*
 let state = {
@@ -57,6 +57,7 @@ const initialState = {
 
 // 集成 reducer
 const reducer = combineReducers({
+    loginReducer,
     commentReducer,
     sliderReducer,
     manReducer,

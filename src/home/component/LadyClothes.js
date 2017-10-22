@@ -23,6 +23,9 @@ class LadyClothes extends React.Component{
         let node = document.querySelector('.m-show.f-center');
         let winH = document.documentElement.clientHeight;
         let winS = document.documentElement.scrollTop;
+        if(!node){
+            return
+        }
         if(winH + winS > node.offsetTop){
             this.props.fetchLadyInfo();
             this.isFetch = true;

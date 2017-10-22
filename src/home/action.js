@@ -14,7 +14,7 @@ export const fetchInfo = (url)=> {
               method: 'GET',
               credentials: 'include',
           }).then((response) => {
-              console.log('fetch2');
+
               if((response.status >= 200 && response.status < 300) || response.status === 304 ){
                     return response.json().then(responseJSON=> responseJSON)
               } else {

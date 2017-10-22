@@ -4,6 +4,7 @@ import {NavStage, Content} from '../home/index';
 import {Footer} from "../footer/index"
 import './home.css';
 
+
 const Home = ()=>(
     <div>
         <Search/>
