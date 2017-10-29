@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import * as Status from '../../status';
 import {Link} from 'react-router';
 import {fetchMan} from '../action';
+import { hashHistory,browserHistory } from 'react-router';
 
 /**
  * 男装信息： 通过fetch 异步拉取数据到 store
@@ -11,7 +12,7 @@ export const Part = ({id, icon, name, price, }) => {
     return(
         <li className="item-small">
             <div className="hd">
-                <Link to={id}><img src={icon} width="204"/></Link>
+                <div onClick={()=>{browserHistory.push('/product/'+ id)}}><img src={icon} width="204"/></div>
             </div>
 
             <div className="bd">
@@ -58,7 +59,7 @@ class ManClothes extends React.Component{
                    <div className="m-show f-center">
                        <div className="nav f-cb">
                            <h3 className="m-title man">品质男装</h3>
-                           <a className="nav-right" href="/biyaoweb/category?category=男装">查看全部&gt;</a>
+                           <span className="nav-right" onClick={()=>{browserHistory.push(`/category/男装`)}}>查看全部&gt;</span>
                        </div>
                        <ul className="m-show-wrap man f-cb">
                            数据请求中
@@ -77,7 +78,7 @@ class ManClothes extends React.Component{
                     <div className="m-show f-center">
                         <div className="nav f-cb">
                             <h3 className="m-title man">品质男装</h3>
-                            <a className="nav-right" href="/biyaoweb/category?category=男装">查看全部&gt;</a>
+                            <span className="nav-right" onClick={()=>{browserHistory.push(`/category/男装`)}}>查看全部&gt;</span>
                         </div>
                         <ul className="m-show-wrap man f-cb">
                             {productArr}
@@ -98,7 +99,7 @@ class ManClothes extends React.Component{
                     <div className="m-show f-center">
                         <div className="nav f-cb">
                             <h3 className="m-title man">品质男装</h3>
-                            <a className="nav-right" href="/biyaoweb/category?category=男装">查看全部&gt;</a>
+                            <span className="nav-right" onClick={()=>{hashHistory.push(`/category/男装`)}}>查看全部&gt;</span>
                         </div>
                         <ul className="m-show-wrap man f-cb">
 

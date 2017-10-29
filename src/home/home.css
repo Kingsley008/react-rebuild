@@ -756,9 +756,11 @@ body {
 .m-show .nav-right{
     float: right;
     font-size: 12px;
+    cursor: pointer;
 }
 .m-show .nav-right:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 .m-show ul li{
     float: left;
@@ -784,6 +786,10 @@ body {
     height: 80px;
     text-align: center;
     background-color: #fff;
+}
+
+.m-show-wrap .item-small {
+    cursor: pointer;
 }
 
 .item-large-intro{

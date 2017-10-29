@@ -1,7 +1,7 @@
 import React from 'react';
-
+import RegisterPage from '../register/index';
 const Register = ()=>(
-    <div>Register</div>
+    <RegisterPage/>
 );
 
 export {Register};

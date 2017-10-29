@@ -3,6 +3,9 @@ import {routerReducer} from 'react-router-redux';
 import promiseMiddleware from './middleWare/promiseMiddleware';
 import {sliderReducer,manReducer,ladyReducer, commentReducer} from './home/reducer';
 import {loginReducer} from "./login/reducer"
+import {registerReducer} from './register/reducer';
+import {categoryReducer} from './category/reducer';
+import {productReducer} from "./detail/reducer";
 
 /*
 let state = {
@@ -57,6 +60,9 @@ const initialState = {
 
 // 集成 reducer
 const reducer = combineReducers({
+    productReducer,
+    categoryReducer,
+    registerReducer,
     loginReducer,
     commentReducer,
     sliderReducer,

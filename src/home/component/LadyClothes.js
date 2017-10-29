@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Part} from "./ManClothes";
 import {fetchLady} from '../action';
 import * as Status from '../../status';
+import {Link} from 'react-router';
+import {browserHistory} from 'react-router';
 
 /**
  * 女装信息： 通过fetch 异步拉取数据到 store
@@ -44,7 +46,7 @@ class LadyClothes extends React.Component{
                        <div className="m-show f-center">
                            <div className="nav f-cb">
                                <h3 className="m-title lady">潮流女装</h3>
-                               <a className="nav-right" href="/biyaoweb/category?category=女装">查看全部&gt;</a>
+                               <Link className="nav-right" to="category/女装">查看全部&gt;</Link>
                            </div>
 
                            <ul className="m-show-wrap lady f-cb">
@@ -57,13 +59,15 @@ class LadyClothes extends React.Component{
                    const ladyArr = [];
                    const productList = this.props.productList;
                    productList.forEach((v) => {
-                       ladyArr.push(<Part id ={v.id} key={v.id} name = {v.name} icon = {'http://localhost:8080/biyaoweb/'+v.icon} price = {v.price}/>)
+                       ladyArr.push(<Part id ={v.id} key={v.id} name = {v.name}
+                                          icon = {'http://localhost:8080/biyaoweb/'+v.icon} price = {v.price}
+                                          />)
                    });
                    return(
                        <div className="m-show f-center">
                            <div className="nav f-cb">
                                <h3 className="m-title lady">潮流女装</h3>
-                               <a className="nav-right" href="/biyaoweb/category?category=女装">查看全部&gt;</a>
+                               <Link className="nav-right" to="category/女装">查看全部&gt;</Link>
                            </div>
 
                            <ul className="m-show-wrap lady f-cb">
@@ -78,7 +82,7 @@ class LadyClothes extends React.Component{
                        <div className="m-show f-center">
                            <div className="nav f-cb">
                                <h3 className="m-title lady">潮流女装</h3>
-                               <a className="nav-right" href="/biyaoweb/category?category=女装">查看全部&gt;</a>
+                               <Link className="nav-right" to="category/女装">查看全部&gt;</Link>
                            </div>
 
                            <ul className="m-show-wrap lady f-cb">

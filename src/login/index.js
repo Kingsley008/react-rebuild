@@ -3,6 +3,7 @@ import * as action from './action';
 import {connect} from 'react-redux';
 import md5 from 'js-md5';
 import { browserHistory } from 'react-router';
+import './login.css';
 
 let url = '/biyaoweb/checklogin?';
 
