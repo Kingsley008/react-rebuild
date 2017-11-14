@@ -12,7 +12,7 @@ export const Part = ({id, icon, name, price, }) => {
     return(
         <li className="item-small">
             <div className="hd">
-                <div onClick={()=>{browserHistory.push('/product/'+ id)}}><img src={icon} width="204"/></div>
+                <div onClick={()=>{browserHistory.push('/product/'+ id)}}><img src={icon} width="204" height="204"/></div>
             </div>
 
             <div className="bd">

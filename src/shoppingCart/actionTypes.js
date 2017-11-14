@@ -1,0 +1,5 @@
+export const REMOVE_ITEM = 'CART/REMOVE_ITEM';
+export const REMOVE_ALL = 'CART/REMOVE_ALL';
+export const TOGGLE_ITEM = 'CART/TOGGLE_ITEM';
+export const SELECT_ALL = 'CART/SELECT_ALL';
+export const ADD_TO_ORDERlIST = 'CART/ADD_TO_ORDERLIST';

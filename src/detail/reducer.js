@@ -1,10 +1,9 @@
 import * as actionTypes from './actionTypes';
 import * as Status from '../status';
 
-const shoppingCart = JSON.stringify(window.localStorage.getItem('shoppingCart')) || [];
 
-export const productReducer = (state = {status: Status.LOADING , productColor:null, productSize:null, productNumber:1, shoppingCart:[],
-    isDetail:false }, action) => {
+export const productReducer = (state = {status: Status.LOADING , productColor:null, productSize:null, productNumber:1, shoppingCart:JSON.parse(window.localStorage.getItem('shoppingCart')) || [],
+    isDetail:true }, action) => {
 
     switch (action.type){
         case actionTypes.FETCH_PRODUCT_STARTED:{
@@ -26,9 +25,11 @@ export const productReducer = (state = {status: Status.LOADING , productColor:nu
             return{...state, productNumber:action.number}
         }
         case actionTypes.ADD_SHOPPING_CART:{
-            shoppingCart.push(action.product);
-            localStorage.setItem('shoppingCart',shoppingCart);
-            return{...state}
+            action.product.id = state.shoppingCart.length;
+            state.shoppingCart.push(action.product);
+            localStorage.setItem('shoppingCart',JSON.stringify(state.shoppingCart));
+
+            return{...state, shoppingCart: state.shoppingCart}
         }
         case actionTypes.SHOW_PRODUCT_COMMENT:{
             return{...state,isDetail:false}
@@ -44,6 +45,11 @@ export const productReducer = (state = {status: Status.LOADING , productColor:nu
         }
         case actionTypes.CHANGE_ICON:{
             return{...state,showIcon:action.src}
+        }
+        // 清空全部购物车
+        case actionTypes.REMOVE_ALL:{
+            localStorage.removeItem('shoppingCart');
+            return {...state, shoppingCart:[]}
         }
         default:
             return state;

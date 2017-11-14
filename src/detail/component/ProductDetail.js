@@ -1,5 +1,6 @@
 import React from 'react';
 
+let nextId = 0;
 class ProductDetail extends React.Component {
 
     constructor(props) {
@@ -9,7 +10,7 @@ class ProductDetail extends React.Component {
     render() {
         const {text} = this.props;
         return (
-            <div dangerouslySetInnerHTML={{__html:text}} />
+            <div key={nextId++} dangerouslySetInnerHTML={{__html:text}} />
         )
     }
 }

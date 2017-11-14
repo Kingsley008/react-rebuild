@@ -6,6 +6,7 @@ import {loginReducer} from "./login/reducer"
 import {registerReducer} from './register/reducer';
 import {categoryReducer} from './category/reducer';
 import {productReducer} from "./detail/reducer";
+import {cartReducer} from './shoppingCart/reducer';
 
 /*
 let state = {
@@ -60,6 +61,7 @@ const initialState = {
 
 // 集成 reducer
 const reducer = combineReducers({
+    cartReducer,
     productReducer,
     categoryReducer,
     registerReducer,

@@ -81,6 +81,12 @@ export const changeIcon = (src) => {
     }
 };
 
+export const removeAll = () => {
+    return {
+        type: actionTypes.REMOVE_ALL,
+    }
+};
+
 
 export const fetchProduct = (url)=> {
     let apiUrl = url;
