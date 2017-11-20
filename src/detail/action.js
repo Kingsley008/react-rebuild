@@ -87,6 +87,20 @@ export const removeAll = () => {
     }
 };
 
+export const alterNumber = (id,value) => {
+    return {
+        type: actionTypes.ALTER_NUMBER,
+        id:id,
+        value: value,
+    }
+};
+
+export const removeOne = (id) => {
+    return {
+        type: actionTypes.REMOVE_ONE,
+        id: id
+    }
+};
 
 export const fetchProduct = (url)=> {
     let apiUrl = url;

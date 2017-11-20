@@ -105,7 +105,12 @@ class Comment extends React.Component {
             case Status.SUCCESS: {
                 const commentArr = [];
                 this.props.commentList.forEach((v) => {
-                   commentArr.push(<CommentPart key={v.id} icon ={"http://localhost:8080/biyaoweb/"+ v.icon} productName={v.productName}
+                    let  icon = v.icon;
+
+                    if(v.icon.indexOf('http') === -1){
+                        icon = 'http://localhost:8080/biyaoweb/' + icon;
+                    }
+                   commentArr.push(<CommentPart key={v.id} icon ={icon} productName={v.productName}
                                                 trueName = {v.trueName} buyTime ={v.buyTime} comments={v.comments}/>)
                 });
                 return (

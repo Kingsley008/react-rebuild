@@ -7,47 +7,11 @@ import {registerReducer} from './register/reducer';
 import {categoryReducer} from './category/reducer';
 import {productReducer} from "./detail/reducer";
 import {cartReducer} from './shoppingCart/reducer';
+import {settlementReducer} from "./settlement/reducer"
 
-/*
-let state = {
-    imgSlider:[],
-    imgNewProduct:[],
-    imgFactory :[],
-    user:{
-        name:'xxx',
-        address:'xxx'
-    },
-    comments:[{
-      userName:'xxx',
-      productName:'xxx',
-      comment:'xxx'
-    }],
-    // 对应后台product对象的字段即可
-    product:[{
-       id:1,
-       productName:'xxx',
-       productPrice:'xxx',
-       isNewProduct:1,
-    }],
-    // 对应 localStorage 中 存储的购物车
-    cartList:[{
 
-    }],
-    // 对应 localStorage
-    orderList:[{
-
-    }],
-    // 对应 后台对象
-    purchasedList:[{
-
-    }]
-
-};*/
 
 const win = window;
-
-
-
 // 定义中间件
 const middlewares = [promiseMiddleware];
 const storeEnhancers = compose(
@@ -61,6 +25,7 @@ const initialState = {
 
 // 集成 reducer
 const reducer = combineReducers({
+    settlementReducer,
     cartReducer,
     productReducer,
     categoryReducer,

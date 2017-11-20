@@ -31,7 +31,7 @@ class Login extends React.Component {
 
         if(this.props.isLocalValidate){
             this.password = md5(this.password);
-            const urlGet = url +"phoneNumber=" + this.userName + '&password='+ this.password;
+            const urlGet = url +"username=" + this.userName + '&password='+ this.password;
             this.props.fetchLogin(urlGet);
         }
     }
@@ -62,7 +62,7 @@ class Login extends React.Component {
 }
 
 const mapToState = (state) => {
-    console.log(state);
+
     return {
         phoneWarn: state.loginReducer.noticeUserName,
         passwordWarn: state.loginReducer.noticePassword,

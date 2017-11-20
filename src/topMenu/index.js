@@ -41,7 +41,7 @@ const Nav = ({user}) => (
                         </dl>
                     </div>
                 </li>
-                <li className="header-user-item user-message"><a href="">{user.trueName?user.trueName:'游客，你好'}<span className="message-num"></span></a></li>
+                <li className="header-user-item user-message"><a href="">{user.trueName?user.trueName:'游客'}，你好<span className="message-num"></span></a></li>
             <li className="header-user-item user-shopCar"><Link to="shoppingCart">购物车<span className="shopCar-num"></span></Link></li>
         </ul>
     </div>

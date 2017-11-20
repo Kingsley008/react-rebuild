@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, browserHistory} from 'react-router';
+import {browserHistory, Link} from 'react-router';
 import ProductDetail from "./ProductDetail";
 import ProductComments from './ProductComment';
 import {connect} from 'react-redux';
@@ -82,27 +82,33 @@ class ProductPage extends React.Component {
 
     onClickPicture(e) {
         const target = e.target;
-        if(e.target.src){
+        if (e.target.src) {
             this.props.onChangeIcon(target.src);
         }
     }
+
     onClickShopCart() {
         let self = this;
-        let{colorSelected,  sizeSelected , numberSelected} = self.props;
+        let {colorSelected, sizeSelected, numberSelected} = self.props;
         let nextId = 0;
         const product = {
             id: nextId++,
             productColor: colorSelected,
             productSize: sizeSelected,
             productNumber: numberSelected,
-            productPrice : self.props.productDetail.product.price,
+            productPrice: self.props.productDetail.product.price,
             productName: self.props.productDetail.product.name,
             imgURL: prefix + self.props.productDetail.product.icon,
         };
 
+        if (product.productSize == null || product.productColor == null) {
+            alert('请选择衣服的型号和颜色');
+            return;
+        }
+
         this.props.addToShopCart(product);
         browserHistory.push({
-            pathname:'/shoppingCart'
+            pathname: '/shoppingCart'
         })
 
     }
@@ -128,8 +134,8 @@ class ProductPage extends React.Component {
                 for (let i = 0; i < 4; i++) {
                     recommentArr.push(<ProductRecommendation/>)
                 }
-                const {catagory, arrColor, arrImg, intro, produceDate, arrSize} = this.props.productDetail;
-                const {name, price, text, id, subCatagory, icon} = this.props.productDetail.product;
+                const {catagory, arrColor, arrImg, intro, arrSize} = this.props.productDetail;
+                const {name, price, text, id, subCatagory,produceDate, icon} = this.props.productDetail.product;
                 const sizeParts = [];
                 const colorParts = [];
                 const imgParts = [];
@@ -141,7 +147,7 @@ class ProductPage extends React.Component {
                     colorParts.push(<ProductColors color={v} key={i} colorSelected={this.props.colorSelected}/>)
                 });
                 arrImg.forEach((v, i) => {
-                    if(v.indexOf('localhost') > -1){
+                    if (v.indexOf('localhost') > -1) {
                         imgParts.push(<ProductImg imgUrl={v} key={i}/>)
                     } else {
                         imgParts.push(<ProductImg imgUrl={prefix + v} key={i}/>)
@@ -149,7 +155,7 @@ class ProductPage extends React.Component {
 
                 });
 
-                const iconURL = this.props.showIcon.indexOf('localhost') > -1 ?  this.props.showIcon : prefix + this.props.showIcon;
+                const iconURL = this.props.showIcon.indexOf('localhost') > -1 ? this.props.showIcon : prefix + this.props.showIcon;
 
                 return (
                     <div style={{backgroundColor: "#fff"}}>
@@ -161,7 +167,7 @@ class ProductPage extends React.Component {
                             <div className="section-editor f-cb">
                                 <div className="editor-main">
                                     <div className="editor-pic f-cb">
-                                        <p><img className="main-pic" src={ iconURL }/></p>
+                                        <p><img className="main-pic" src={iconURL}/></p>
                                         <ul className="group-pic" onClick={this.onClickPicture}>
                                             {imgParts}
                                         </ul>
@@ -208,8 +214,7 @@ class ProductPage extends React.Component {
                                             <span>售价</span>
                                             <div>
                                                 <span className="panel-money">￥<i>{price}</i></span>
-                                                <span className="panel-duration">生产周期：<span>{produceDate}</span>天
-						</span>
+                                                <span className="panel-duration">生产周期：<span>{produceDate}</span>天</span>
                                             </div>
                                         </li>
 
@@ -231,7 +236,6 @@ class ProductPage extends React.Component {
                                                 </li>
                                             </ul>
                                         </li>
-
                                         <li className="panel-sizeImg">
                                             <div><span>查看尺码对照表</span></div>
                                         </li>
@@ -247,8 +251,8 @@ class ProductPage extends React.Component {
                                         </li>
                                     </ul>
                                     <div className="panel-bottom">
-                                        <p id="buyNow" className="panel-buyNow" >立即购买</p>
-                                        <Link className="addShopCar" onClick={this.onClickShopCart}  >加入购物车</Link>
+                                        <p id="buyNow" className="panel-buyNow">立即购买</p>
+                                        <Link className="addShopCar" onClick={this.onClickShopCart}>加入购物车</Link>
                                     </div>
                                 </div>
                             </div>
@@ -298,7 +302,7 @@ const mapState = (state) => {
         sizeSelected: state.productReducer.productSize,
         numberSelected: state.productReducer.productNumber,
         productNumber: reducer.productNumber,
-        showIcon:reducer.showIcon,
+        showIcon: reducer.showIcon,
     }
 };
 
@@ -331,7 +335,7 @@ const mapDispatch = (dispatch) => {
         onChangeIcon: (src) => {
             dispatch(actions.changeIcon(src))
         },
-        addToShopCart:(json) => {
+        addToShopCart: (json) => {
             dispatch(actions.addToShoppingCart(json))
         }
 

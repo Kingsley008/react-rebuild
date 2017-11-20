@@ -1,7 +1,8 @@
 import React from 'react';
+import SettlementPage from '../settlement/index';
 
 const Settlement = ()=>(
-    <div>Settlement</div>
+    <div><SettlementPage/></div>
 );
 
 export {Settlement};

@@ -51,6 +51,29 @@ export const productReducer = (state = {status: Status.LOADING , productColor:nu
             localStorage.removeItem('shoppingCart');
             return {...state, shoppingCart:[]}
         }
+        // 修改购物车的商品数量
+        case actionTypes.ALTER_NUMBER: {
+            return{...state, shoppingCart:state.shoppingCart.map((v)=>{
+                console.log(action.id);
+                if(v.id == action.id ){
+                    v.productNumber = action.value;
+                    return v;
+                } else {
+                    return v;
+                }
+            })}
+        }
+        // 移除一条购物清单
+        case actionTypes.REMOVE_ONE: {
+            let temp = state.shoppingCart.filter((v)=>{
+                return v.id != action.id
+            });
+            localStorage.setItem('shoppingCart', JSON.stringify(temp));
+            return {
+                ...state, shoppingCart: temp
+            }
+        }
+
         default:
             return state;
     }
