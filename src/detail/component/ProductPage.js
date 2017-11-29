@@ -59,6 +59,7 @@ class ProductPage extends React.Component {
         this.increaseNumber = this.increaseNumber.bind(this);
         this.onClickPicture = this.onClickPicture.bind(this);
         this.onClickShopCart = this.onClickShopCart.bind(this);
+        this.onClickBuy = this.onClickBuy.bind(this);
     }
 
     onClickColor(e) {
@@ -87,7 +88,7 @@ class ProductPage extends React.Component {
         }
     }
 
-    onClickShopCart() {
+    getProductInfo(){
         let self = this;
         let {colorSelected, sizeSelected, numberSelected} = self.props;
         let nextId = 0;
@@ -101,9 +102,48 @@ class ProductPage extends React.Component {
             imgURL: prefix + self.props.productDetail.product.icon,
         };
 
+        return product
+    }
+    onClickBuy(){
+        let product = this.getProductInfo();
         if (product.productSize == null || product.productColor == null) {
             alert('请选择衣服的型号和颜色');
             return;
+        }
+        // 还没登录
+        if(!this.props.user.trueName){
+            browserHistory.push(
+                {
+                    pathname:'/login',
+                }
+            );
+            return
+        }
+
+        let orderList = JSON.parse(localStorage.getItem('order')) || [];
+        orderList.push(product);
+        localStorage.setItem('order', JSON.stringify(orderList));
+        browserHistory.push({
+            pathname: '/settlement'
+        })
+
+    }
+
+    onClickShopCart() {
+
+        let product = this.getProductInfo();
+        if (product.productSize == null || product.productColor == null) {
+            alert('请选择衣服的型号和颜色');
+            return;
+        }
+        // 还没登录
+        if(!this.props.user.trueName){
+            browserHistory.push(
+                {
+                    pathname:'/login',
+                }
+            );
+            return
         }
 
         this.props.addToShopCart(product);
@@ -251,7 +291,7 @@ class ProductPage extends React.Component {
                                         </li>
                                     </ul>
                                     <div className="panel-bottom">
-                                        <p id="buyNow" className="panel-buyNow">立即购买</p>
+                                        <p id="buyNow" className="panel-buyNow" onClick={this.onClickBuy}>立即购买</p>
                                         <Link className="addShopCar" onClick={this.onClickShopCart}>加入购物车</Link>
                                     </div>
                                 </div>
@@ -303,6 +343,7 @@ const mapState = (state) => {
         numberSelected: state.productReducer.productNumber,
         productNumber: reducer.productNumber,
         showIcon: reducer.showIcon,
+        user: state.loginReducer.user,
     }
 };
 
@@ -337,7 +378,7 @@ const mapDispatch = (dispatch) => {
         },
         addToShopCart: (json) => {
             dispatch(actions.addToShoppingCart(json))
-        }
+        },
 
     }
 };

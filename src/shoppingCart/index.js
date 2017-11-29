@@ -91,21 +91,24 @@ class ShoppingCart extends React.Component {
     // 结算购物车
     onSettlement() {
         // 还没登录
-        console.log(this.props.user);
-        if(!this.props.user.name){
+        if(!this.props.user.trueName){
             browserHistory.push(
                 {
                     pathname:'/login',
                 }
-            )
+            );
             return
         }
-        // 跳转到结算页面
-        browserHistory.push(
-            {
-                pathname:'/settlement',
-            }
-        )
+
+            // 跳转到结算页面 并清空当前的购物车
+            localStorage.setItem('order',localStorage.getItem('shoppingCart'));
+            console.log(JSON.parse(localStorage.getItem('order')));
+            localStorage.removeItem('shoppingCart');
+            browserHistory.push(
+                {
+                    pathname:'/settlement',
+                }
+            )
     }
 
     render() {

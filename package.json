@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "antd": "^2.13.10",
+    "jquery": "^3.2.1",
     "js-md5": "^0.6.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",

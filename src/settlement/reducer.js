@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes';
 import * as Status from '../status';
 
-export const settlementReducer = ( state = {status: Status.LOADING, shoppingCart:JSON.parse(window.localStorage.getItem('shoppingCart')) || [] },action)=> {
+export const settlementReducer = ( state = {status: Status.LOADING, shoppingCart:JSON.parse(window.localStorage.getItem('order')) || [] },action)=> {
     switch (action.type){
         case actionTypes.MAKE_ORDER_STARTED:{
                 return {...state, status:Status.LOADING}
@@ -28,7 +28,7 @@ export const settlementReducer = ( state = {status: Status.LOADING, shoppingCart
         }
         break;
         default:{
-            return {...state}
+            return {...state,shoppingCart:JSON.parse(window.localStorage.getItem('order')) || [] }
         }
     }
 };

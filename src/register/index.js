@@ -65,7 +65,8 @@ class RegisterPage extends React.Component {
         if(this.props.result === 1){
             alert('注册成功 马上跳转到登录页面');
             browserHistory.push('login');
-            this.props.result = 0;
+            // TODO BUG FIX 
+            // this.props.result = 0;
         }
 
         return (
