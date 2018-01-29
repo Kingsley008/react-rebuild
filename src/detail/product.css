@@ -146,11 +146,11 @@ li {
 }
 .specs-detail,.color-detail{
     width: 65px;
-    height: 35px;
+    height: 30px;
     border: 1px solid #523669;
     margin-right: 10px;
     margin-bottom: 10px;
-    padding-top:3px ;
+    padding-top:8px ;
     text-align: center;
     vertical-align: middle;
 }

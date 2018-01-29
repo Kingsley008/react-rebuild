@@ -1,6 +1,8 @@
 import React from 'react';
-
+import PurchasedPage from "../purchased/index";
 const Purchased = ()=>(
-    <div>purchased</div>
+    <div>
+        <PurchasedPage/>
+    </div>
 );
 export {Purchased}

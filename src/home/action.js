@@ -28,8 +28,6 @@ export const fetchInfo = (url)=> {
 /**
  * 异步加载行为 取得男装信息
  * **/
-
-
 export const fetchMan = (url) => {
 
     return {

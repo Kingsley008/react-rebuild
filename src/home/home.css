@@ -767,6 +767,7 @@ body {
     overflow: hidden;
     margin-right: 10px;
     margin-top: 10px;
+    width: 204px;
 }
 .m-show .hd{
     height: 204px;

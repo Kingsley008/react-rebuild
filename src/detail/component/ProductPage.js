@@ -174,8 +174,9 @@ class ProductPage extends React.Component {
                 for (let i = 0; i < 4; i++) {
                     recommentArr.push(<ProductRecommendation/>)
                 }
-                const {catagory, arrColor, arrImg, intro, arrSize} = this.props.productDetail;
-                const {name, price, text, id, subCatagory,produceDate, icon} = this.props.productDetail.product;
+                const {catagory, arrColor, arrImg, arrSize} = this.props.productDetail;
+                const {name, price, text, id, subCatagory,produceDate, icon,intro} = this.props.productDetail.product;
+
                 const sizeParts = [];
                 const colorParts = [];
                 const imgParts = [];

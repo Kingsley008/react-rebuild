@@ -541,13 +541,13 @@ html, body {
 
 .t-bd .tab ul {
     padding: 20px;
+    width: 1180px;
+    overflow: hidden;
     background-color: #fff;
 }
 
 .t-bd .tab li, .t-bd .tab h3 {
-    float: left;
     margin-right: 20px;
-
 }
 
 .t-bd .tab ul a {

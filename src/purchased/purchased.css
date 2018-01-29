@@ -1,0 +1,18 @@
+.table-title {
+    margin-bottom: 10px;
+}
+.comment-btn {
+    display: block;
+    width: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.comment-btn:hover {
+    text-decoration: underline;
+}
+.comment-box {
+    text-align: right;
+}
+.comment-submit {
+
+}

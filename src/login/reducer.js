@@ -1,8 +1,11 @@
 import * as actionTypes from './actionTypes';
 import * as Status from '../status';
+import {util} from "../util/util"
 
+//console.log(util.getCookie().user);
+// console.log(JSON.parse(JSON.parse(util.getCookie().user)));
 
-export const loginReducer  = (state = {status: Status.LOADING, noticePassword :"", noticeUserName:"",message:"",user:{}} , action) => {
+export const loginReducer  = (state = {status: Status.LOADING, noticePassword :"", noticeUserName:"",message:"",user:(util.getCookie().user && JSON.parse(util.getCookie().user)) || {}} , action) => {
       switch (action.type){
           case actionTypes.FETCH_LOGIN_STARTED:{
               return {

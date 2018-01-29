@@ -132,7 +132,6 @@ body {
     float: left;
     width: 16px;
     height: 15px;
-    margin-top:5px ;
     margin-right: 3px;
     background-position: 0 -58px;
 }
@@ -142,7 +141,6 @@ body {
     height: 16px;
     width: 100px;
     border-radius: 4px;
-    margin-top: 5px;
     overflow: hidden;
 }
 
@@ -157,8 +155,6 @@ body {
     background-position: -19px -23px;
 }
 .user-shopCar>a {
-    position: relative;
-    top: -4px;
     overflow: hidden;
 }
 

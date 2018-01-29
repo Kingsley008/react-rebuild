@@ -8,6 +8,8 @@ import { hashHistory,browserHistory } from 'react-router';
 /**
  * 男装信息： 通过fetch 异步拉取数据到 store
  * **/
+
+// TODO id  写活
 export const Part = ({id, icon, name, price, }) => {
     return(
         <li className="item-small">

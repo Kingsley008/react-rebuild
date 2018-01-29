@@ -7,7 +7,7 @@ import '../css/common.css';
  * 使用Link 指定路由
  * **/
 
-const url = 'biyaoweb/logout';
+const url = 'http://localhost:8080/biyaoweb/logout';
 const Nav = ({user,logOut}) => {
 
     return(
@@ -16,7 +16,7 @@ const Nav = ({user,logOut}) => {
                 <ul className="header-nav">
                     <li className="header-nav-item"><Link to="/home">首页</Link><b className="hr-v"></b></li>
                     <li className="header-nav-item"><a href="javascript:void(0)">平台政策</a><b className="hr-v"></b></li>
-                    <li className="header-nav-item"><a href="javascript:void(0)">商家入驻</a></li>
+                    <li className="header-nav-item"><a href="javascript:void(0)"></a></li>
                 </ul>
                 <ul className="header-user">
                     <li className="header-user-item login"><Link to="/login" id="loginBtn">登录</Link></li>
