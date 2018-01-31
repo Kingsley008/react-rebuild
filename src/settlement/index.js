@@ -94,7 +94,7 @@ class OrderList extends React.Component{
         return productOrderList;
 
     }
-    // TODO 代理 BUG 放到服务器端测试
+
     makeOrder(){
         let productOrderList = this.orderProducts();
         $.ajax({

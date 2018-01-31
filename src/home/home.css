@@ -695,9 +695,9 @@ body {
     background-color: #dddddd;
 }
 
-.m-new .m-move li:hover .new-pic1 {
+/*.m-new .m-move li:hover .new-pic1 {
     display: none;
-}
+}*/
 
 .m-new .m-move li:hover .new-pic2 {
     display: block;
