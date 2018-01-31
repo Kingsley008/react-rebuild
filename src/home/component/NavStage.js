@@ -33,7 +33,7 @@ class NavStage extends React.Component{
         for(let i = 1; i <= 6; i++ ){
             let slider = {};
             slider.id = i-1;
-          //  slider.url = sliderList.imgURL;
+
             if(i === 1){
                 slider.isSelected = true;
             }else{
@@ -129,11 +129,12 @@ class NavStage extends React.Component{
                 const sliders = this.state.sliders;
                 for(let i = 0; i < sliders.length; i++){
                     sliders[i].url = this.props.sliders[i].imgURL;
+                    sliders[i].pageUrl = this.props.sliders[i].pageURL;
                 }
 
                 // console.log(sliders);
                 for (let i = 0, len = sliders.length; i < len ; i++) {
-                    SildersComponent.push(<Slider key = {sliders[i].id} imgUrl = {sliders[i].url} isSelected = {sliders[i].isSelected}/>);
+                    SildersComponent.push(<Slider key = {sliders[i].id} imgUrl = {sliders[i].url} pageUrl = {sliders[i].pageUrl}  isSelected = {sliders[i].isSelected}/>);
                     Controllers.push(<Controller key = {sliders[i].id} id={sliders[i].id} isSelected = {sliders[i].isSelected} bindHint={this.bindHint} />);
                 }
 

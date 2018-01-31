@@ -1,10 +1,10 @@
 /* 购物流程图 */
 
-.icon-process {
+.icon-process-two {
     display: block;
     width: 560px;
     height: 22px;
-    background: url("../imgs/cart/car_steps.png") no-repeat -30px -60px ;
+    background: url("../imgs/cart/car_steps.png") no-repeat -30px -60px;
 }
 .steps {
     width: 560px;

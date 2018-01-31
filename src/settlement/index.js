@@ -178,7 +178,7 @@ class OrderList extends React.Component{
                     <div className="t-nav-center f-cb">
                         <div className="nav-logo"><Link to="/home"></Link></div>
                         <div className="nav-search">
-                            <span className="icon-process"></span>
+                            <span className="icon-process-two"></span>
                             <ul className="steps f-cb">
                                 <li>查看购物车</li>
                                 <li>确认订单</li>
@@ -225,7 +225,7 @@ class OrderList extends React.Component{
 }
 
 
-// TODO 根据用户的状态 来填写信息 用户状态维持的问题先解决 cookies
+
 const mapState = (state) => {
     console.log(state.settlementReducer.shoppingCart);
     return {

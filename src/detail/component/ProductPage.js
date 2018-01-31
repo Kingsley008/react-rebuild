@@ -91,9 +91,9 @@ class ProductPage extends React.Component {
     getProductInfo(){
         let self = this;
         let {colorSelected, sizeSelected, numberSelected} = self.props;
-        let nextId = 0;
+        let id = self.props.productDetail.product.id;
         const product = {
-            id: nextId++,
+            id: id,
             productColor: colorSelected,
             productSize: sizeSelected,
             productNumber: numberSelected,
@@ -101,7 +101,7 @@ class ProductPage extends React.Component {
             productName: self.props.productDetail.product.name,
             imgURL: prefix + self.props.productDetail.product.icon,
         };
-
+        console.log(product);
         return product
     }
     onClickBuy(){
@@ -277,9 +277,9 @@ class ProductPage extends React.Component {
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li className="panel-sizeImg">
+{/*                                        <li className="panel-sizeImg">
                                             <div><span>查看尺码对照表</span></div>
-                                        </li>
+                                        </li>*/}
 
                                         <li className="panel-count"><span>数量</span>
                                             <div>

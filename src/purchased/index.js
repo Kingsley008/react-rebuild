@@ -128,7 +128,7 @@ class Purchased extends React.Component {
             type: 'GET',
             url: "/biyaoweb/getOrderList",
             success: function (data) {
-                console.log(data)
+
                 self.initState(data)
             }
         })
@@ -164,7 +164,7 @@ class Purchased extends React.Component {
                     <div className="t-nav-center f-cb">
                         <div className="nav-logo"><Link to="/home"></Link></div>
                         <div className="nav-search">
-                            <span className="icon-process"></span>
+                            <span className="icon-process-three"></span>
                             <ul className="steps f-cb">
                                 <li>查看购物车</li>
                                 <li>确认订单</li>

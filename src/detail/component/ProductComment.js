@@ -44,6 +44,7 @@ class ProductComment extends React.Component{
         }).then((res) => {
             if((res.status >= 200 && res.status < 300) || res.status === 304) {
                 res.json().then((responseText)=> {
+                    console.log(responseText);
                     const commentList = responseText.commentsList;
                     let mapComment = null;
                     let mapIcon = null;
