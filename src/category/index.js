@@ -33,8 +33,6 @@ class Part extends React.Component {
     }
     render(){
         const {sub,arr} = this.props;
-        console.log(sub);
-        console.log(arr);
         let productPart = [];
         arr.forEach((v,i)=>{
            productPart.push(<Spart x = {v} key={i} />)

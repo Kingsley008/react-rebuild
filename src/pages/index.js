@@ -9,5 +9,6 @@ import {Category} from "./Category"
 import {Product} from "./ProductDetail"
 import {Success} from "./Success"
 import {Fail} from "./Fail"
+import {Search} from "./SearchPage"
 
-export {App, Home, Login, Purchased, Register, Settlement, ShoppingCart,Category, Product, Success, Fail}
+export {App, Home, Login, Purchased, Register, Settlement, ShoppingCart,Category, Product, Success, Fail, Search}

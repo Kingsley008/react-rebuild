@@ -1,13 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router';
-
+import {browserHistory, Link} from 'react-router';
 
 class Search extends React.Component{
+
     constructor(){
         super();
+        this.saveInput = this.saveInput.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.state = {
             fixStyle:{}
         }
+
     }
 
     componentDidMount(){
@@ -32,8 +35,25 @@ class Search extends React.Component{
                     fixStyle:{}
                 })
             }
-        })
+        });
     }
+
+    saveInput(e){
+
+        this.setState({
+            input:e.target.value
+        });
+
+    }
+
+    handleClick(e){
+        if(this.state.input == null){
+            window.alert('请输入搜索关键词');
+        }else {
+            browserHistory.push('/search/' + this.state.input)
+        }
+    }
+
     render(){
         return(
             <div className="t-nav" style={this.state.fixStyle }>
@@ -41,8 +61,8 @@ class Search extends React.Component{
                     <div className="nav-logo"><Link to ="/home"></Link></div>
                     <div className="nav-search">
                         <p className="f-cb">
-                            <input type="text" className="searchInput" placeholder="请输入要搜索的商品"/>
-                            <span className="searchBtn"></span>
+                            <input type="text" className="searchInput" onInput={this.saveInput} placeholder="请输入要搜索的商品"/>
+                            <span className="searchBtn" onClick={this.handleClick}></span>
                         </p>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
-import {App, Home, Login, Register, Settlement, ShoppingCart,Purchased,Category, Product, Success, Fail} from './pages/index';
+import {App, Home, Login, Register, Settlement, ShoppingCart,Purchased,Category, Product, Success, Fail, Search} from './pages/index';
 import {syncHistoryWithStore} from 'react-router-redux';
 import  store from './Store';
 import './mobile.css';
@@ -22,6 +22,7 @@ const Routes = () => (
             <Route path = "product/:id" component = {Product}/>
             <Route path = "success" component = {Success}/>
             <Route path = "fail" component ={Fail}/>
+            <Route path = "search/:name" component = {Search}/>
         </Route>
     </Router>
 );
