@@ -1,4 +1,4 @@
-// 本地验证
+    // 本地验证
 export const CHECK_VALIDATE_LOCAL_USERNAME = 'LOGIN/checkValidateLocalUsername';
 
 export const CHECK_VALIDATE_LOCAL_PASSWORD = 'LOGIN/checkValidateLocalPASSWORD';

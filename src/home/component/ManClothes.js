@@ -64,7 +64,7 @@ class ManClothes extends React.Component{
                            <span className="nav-right" onClick={()=>{browserHistory.push(`/category/男装`)}}>查看全部&gt;</span>
                        </div>
                        <ul className="m-show-wrap man f-cb">
-                           数据请求中
+                           数据请求中...
                        </ul>
                    </div>
                )
@@ -92,7 +92,7 @@ class ManClothes extends React.Component{
             case Status.FAILURE:{
                 return(
                     <div>
-                        服务器炸了
+                        数据获取失败！请稍后再试
                     </div>
                 )
             }
